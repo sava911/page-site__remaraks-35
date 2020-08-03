@@ -1,0 +1,267 @@
+@import 'libs';
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+@import 'vars';
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* container
+=====================================================*/
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 11px;
+    margin: 0 auto;
+
+    @media (min-width: $table) {
+        padding: 0 35px;
+    }
+
+    @media (min-width: $laptop) {
+        padding: 0 59px;
+    }
+}
+
+/* blocks 
+=====================================================*/
+
+.promotions {
+    padding: 40px 0 20px;
+    
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #000;
+
+        margin-bottom: 32px;
+
+        @media (min-width: $laptop) {
+            font-size: 32px; 
+        }
+    }
+
+    &__btn {
+        text-align: center;
+    }
+
+    &__slider {
+        position: relative;
+        margin: 0 -12px 42px;
+
+        @media (min-width: $table) {
+            margin: 0 -12px 24px;
+        }
+    }
+
+    &__slider-arrow {
+        position: absolute;
+        right: 40%;
+        bottom: -18px;
+        z-index: 10;
+
+        opacity: 0.4;
+        transition: opacity .2s linear;
+        cursor: pointer;
+
+        &--left {
+            transform: rotate(180deg);
+            right: 51%;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+
+        @media (min-width: $table) {
+            right: 12px;
+            top: -60px;
+
+            &--left {
+                transform: rotate(180deg);
+                right: 42px;
+            }
+        }
+    }
+
+    &__slider-item {
+        padding: 0 12px;
+    }
+
+    &__slider-img {
+        position: relative;
+        display: block;
+        padding: 0px 0px 50% 0px;
+
+        outline: none;
+        border-radius: $imgSmooth; 
+        overflow: hidden;
+
+        margin-bottom: 16px;
+
+        &:hover {
+            img {
+                transform: scale(1.08);
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: 50% 60%;
+
+            transition: transform .6s ease;
+        }
+    }
+
+    &__slider-title {
+        font-size: 14px;
+        font-weight: 700;
+
+        a {
+            color: $black;
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+
+.btn {
+    font-size: 14px;
+    font-weight: 500;
+    color: $black;
+
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: $yellow;
+    border-radius: 4px;
+    border: none;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background .2s linear;
+
+    &:hover {
+        background-color: rgba($yellow, .6);
+    }
+}
+
+.artilce {
+    padding: 20px 40px;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $table) {
+            flex-direction: row;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+        font-size: 16px;
+        font-weight: 700;
+
+        margin-bottom: 16px;
+
+        &:hover {
+            img {
+                padding-left: 150px;
+                opacity: 0;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: $black;
+        }
+
+        img {
+            transition: all .5s ease-in-out;
+            padding-left: 8px;
+        }
+
+        @media (min-width: $table) {
+            font-size: 20px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-radius: $imgSmooth;
+
+        margin-bottom: 24px;
+
+        &:hover {
+            img {
+                transform: scale(1.08);
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .8s ease;
+        }
+
+        @media (min-width: $table) {
+            width: 50%;
+            margin-bottom: 0px;
+            height: 212px;
+        }
+    }
+
+    &__content {
+        padding-left: 0;
+        width: 100%;
+
+        @media (min-width: $table) {
+            padding-left: 24px;
+            width: 50%;
+        }
+    }
+
+    &__text {
+        font-size: 12px;
+        color: $black;
+        font-weight: 400;
+        line-height: 1.4;
+
+        p {
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: $table) {
+            font-size: 14px;
+        }
+    }
+}
